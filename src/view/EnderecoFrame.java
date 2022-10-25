@@ -16,6 +16,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -32,7 +33,7 @@ import model.Endereco;
 public class EnderecoFrame extends JFrame {
 
     private JLabel complemento, bairro, nmrCasa, loc, cep;
-    private JButton save, delete, update, irLoc, limpar, primeiro, anterior, proximo, ultimo;
+    private JButton save, delete, update, irLoc, limpar, primeiro, anterior, proximo, ultimo, voltar;
     private JTextField tComplemento, tBairro, tCasa, tCep;
     private EnderecoController cc;
     private int cont = 0;
@@ -83,12 +84,10 @@ public class EnderecoFrame extends JFrame {
         tela.add(complemento);
 
         tComplemento = new JTextField();
-        tComplemento.setFont(new Font("Arial", 0, 12));
         tComplemento.setBounds(10, 133, 265, 20);
         tela.add(tComplemento);
 
         save = new JButton("Salvar");
-        save.setFont(new Font("Arial", 0, 12));
         save.setBounds(290, 33, 75, 20);
         save.addActionListener(new ActionListener() {
             @Override
@@ -99,7 +98,6 @@ public class EnderecoFrame extends JFrame {
         tela.add(save);
 
         delete = new JButton("Excluir");
-        delete.setFont(new Font("Arial", 0, 12));
         delete.setBounds(290, 83, 75, 20);
         delete.addActionListener(new ActionListener() {
             @Override
@@ -111,7 +109,6 @@ public class EnderecoFrame extends JFrame {
         tela.add(delete);
 
         update = new JButton("Alterar");
-        update.setFont(new Font("Arial", 0, 12));
         update.setBounds(290, 133, 75, 20);
         update.addActionListener(new ActionListener() {
             @Override
@@ -122,8 +119,7 @@ public class EnderecoFrame extends JFrame {
         tela.add(update);
 
         limpar = new JButton("Limpar");
-        limpar.setFont(new Font("Arial", 0, 12));
-        limpar.setBounds(290, 183, 75, 20);
+        limpar.setBounds(105, 183, 75, 20);
         limpar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -132,9 +128,20 @@ public class EnderecoFrame extends JFrame {
         });
         tela.add(limpar);
 
+        voltar = new JButton("Voltar");
+        voltar.setBounds(290, 183, 75, 20);
+        voltar.setBackground(Color.GRAY.brighter());
+        voltar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                new AgendaPrincipal().setVisible(true);
+            }
+        });
+        tela.add(voltar);
+
         primeiro = new JButton("|<");
-        primeiro.setFont(new Font("Arial", 0, 12));
-        primeiro.setBounds(35, 183, 50, 20);
+        primeiro.setBounds(5, 183, 50, 20);
         primeiro.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -144,8 +151,7 @@ public class EnderecoFrame extends JFrame {
         tela.add(primeiro);
 
         anterior = new JButton("<<");
-        anterior.setFont(new Font("Arial", 0, 12));
-        anterior.setBounds(85, 183, 50, 20);
+        anterior.setBounds(55, 183, 50, 20);
         anterior.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -155,8 +161,7 @@ public class EnderecoFrame extends JFrame {
         tela.add(anterior);
 
         proximo = new JButton(">>");
-        proximo.setFont(new Font("Arial", 0, 12));
-        proximo.setBounds(135, 183, 50, 20);
+        proximo.setBounds(174, 183, 50, 20);
         proximo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -166,8 +171,7 @@ public class EnderecoFrame extends JFrame {
         tela.add(proximo);
 
         ultimo = new JButton(">|");
-        ultimo.setFont(new Font("Arial", 0, 12));
-        ultimo.setBounds(185, 183, 50, 20);
+        ultimo.setBounds(223, 183, 50, 20);
         ultimo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -202,8 +206,14 @@ public class EnderecoFrame extends JFrame {
     }
 
     private void onClickLast() {
-        cont = enderecoList.size() - 1;
-        getValores(cont);
+        try {
+            if(cont != 0){
+            cont = enderecoList.size() - 1;
+            getValores(cont);
+            }
+        }catch(IndexOutOfBoundsException ex){
+            JOptionPane.showMessageDialog(null, "Não possui nenhum endereço", "ENDEREÇO", JOptionPane.INFORMATION_MESSAGE);
+        }
     }
 
     private void getValores(int index) {
@@ -221,10 +231,8 @@ public class EnderecoFrame extends JFrame {
         try {
             cc.save(tCep.getText(), tBairro.getText(), tComplemento.getText(), Integer.parseInt(tCasa.getText()));
             JOptionPane.showMessageDialog(null, "Salvo!!", "Endereço", JOptionPane.INFORMATION_MESSAGE);
-            if (cont != 0) {
-                cont++;
-            }
-
+            onClickClear();
+            enderecoList = new EnderecoController().listaEndereco();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Não foi possível excluir\n" + ex, "Error!", JOptionPane.WARNING_MESSAGE);
         }
@@ -238,10 +246,8 @@ public class EnderecoFrame extends JFrame {
         try {
             cc.delete(id);
             JOptionPane.showMessageDialog(null, "Salvo !");
-            if (cont != 0 && cont >= 0) {
-                cont--;
-            }
-
+            onClickClear();
+            enderecoList = new EnderecoController().listaEndereco();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Erro!");
         }
@@ -262,7 +268,8 @@ public class EnderecoFrame extends JFrame {
         try {
             cc.update(id, tCep.getText(), tBairro.getText(), tComplemento.getText(), Integer.parseInt(tCasa.getText()));
             JOptionPane.showMessageDialog(null, "Alteração salva com sucesso!");
-
+            onClickClear();
+            enderecoList = new EnderecoController().listaEndereco();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Não foi possível realizar a alteração!\n" + ex);
 

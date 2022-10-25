@@ -38,8 +38,8 @@ public class AgendaPrincipal extends JFrame {
 
         btnCon = new JButton();
         btnCon.setBounds(55, 60, 50, 50);
-        btnCon.setIcon(new ImageIcon(getClass().getResource("/images/contato.jpeg")));
-        btnCon.setBackground(tela.getBackground());
+        btnCon.setIcon(new ImageIcon(getClass().getResource("/images/contato.png")));
+        btnCon.setBackground(new Color(254, 189, 67));
         btnCon.addActionListener(new EventoBotao());
         tela.add(btnCon);
 
@@ -51,8 +51,8 @@ public class AgendaPrincipal extends JFrame {
 
         btnEnd = new JButton();
         btnEnd.setBounds(210, 60, 50, 50);
-        btnEnd.setIcon(new ImageIcon(getClass().getResource("/images/endereco.jpeg")));
-        btnEnd.setBackground(tela.getBackground());
+        btnEnd.setIcon(new ImageIcon(getClass().getResource("/images/endereco.png")));
+        btnEnd.setBackground(new Color(252, 60, 37));
         btnEnd.addActionListener(new EventoBotao());
         tela.add(btnEnd);
 
@@ -78,7 +78,6 @@ public class AgendaPrincipal extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
         setLocationRelativeTo(null);
-
     }
 
     public static void main(String[] args) {

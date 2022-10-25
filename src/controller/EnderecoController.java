@@ -28,8 +28,12 @@ public class EnderecoController {
     }
 
     public void update(long id,String cep, String bairro, String complemento, int nmrCasa) throws SQLException {
-        Endereco end = new Endereco(cep, bairro, complemento, nmrCasa);
+        Endereco end = new Endereco();
         end.setId(id);
+        end.setCep(cep);
+        end.setBairro(bairro);
+        end.setRua(complemento);
+        end.setNmrCasa(nmrCasa);
         new EnderecoDao().update(end);
     }
 
