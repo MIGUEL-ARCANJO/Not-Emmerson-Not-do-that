@@ -10,7 +10,6 @@ import dao.EnderecoDao;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Font;
-import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
@@ -32,9 +31,9 @@ import model.Endereco;
  */
 public class EnderecoFrame extends JFrame {
 
-    private JLabel nome, complemento, bairro, nmrCasa, loc, cep;
-    private JButton save, delete, update, irLoc, limpar;
-    private JTextField tNome, tComplemento, tBairro, tCasa, tCep;
+    private JLabel complemento, bairro, nmrCasa, loc, cep;
+    private JButton save, delete, update, irLoc, limpar, primeiro, anterior, proximo, ultimo;
+    private JTextField tComplemento, tBairro, tCasa, tCep;
     private EnderecoController cc;
     private int cont = 0;
     private Long key;
@@ -47,7 +46,6 @@ public class EnderecoFrame extends JFrame {
         setLayout(null);
 
         Container tela = getContentPane();
-
 
         bairro = new JLabel("Bairro");
         bairro.setForeground(Color.BLACK);
@@ -88,7 +86,6 @@ public class EnderecoFrame extends JFrame {
         tComplemento.setFont(new Font("Arial", 0, 12));
         tComplemento.setBounds(10, 133, 265, 20);
         tela.add(tComplemento);
-
 
         save = new JButton("Salvar");
         save.setFont(new Font("Arial", 0, 12));
@@ -135,12 +132,88 @@ public class EnderecoFrame extends JFrame {
         });
         tela.add(limpar);
 
+        primeiro = new JButton("|<");
+        primeiro.setFont(new Font("Arial", 0, 12));
+        primeiro.setBounds(35, 183, 50, 20);
+        primeiro.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                onClickFirst();
+            }
+        });
+        tela.add(primeiro);
+
+        anterior = new JButton("<<");
+        anterior.setFont(new Font("Arial", 0, 12));
+        anterior.setBounds(85, 183, 50, 20);
+        anterior.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                onClickAnt();
+            }
+        });
+        tela.add(anterior);
+
+        proximo = new JButton(">>");
+        proximo.setFont(new Font("Arial", 0, 12));
+        proximo.setBounds(135, 183, 50, 20);
+        proximo.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                onClickProx();
+            }
+        });
+        tela.add(proximo);
+
+        ultimo = new JButton(">|");
+        ultimo.setFont(new Font("Arial", 0, 12));
+        ultimo.setBounds(185, 183, 50, 20);
+        ultimo.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                onClickLast();
+            }
+        });
+        tela.add(ultimo);
+
     }
 
     private void configTela() {
         setSize(400, 250);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
+    }
+
+    private void onClickFirst() {
+        cont = 0;
+        getValores(cont);
+    }
+
+    private void onClickAnt() {
+        if (cont != 0) {
+            getValores(--cont);
+        }
+    }
+
+    private void onClickProx() {
+        if (cont != enderecoList.size() - 1) {
+            getValores(++cont);
+        }
+    }
+
+    private void onClickLast() {
+        cont = enderecoList.size() - 1;
+        getValores(cont);
+    }
+
+    private void getValores(int index) {
+        if (index <= enderecoList.size() - 1) {
+            Endereco endAtual = (Endereco) enderecoList.get(index);
+            tBairro.setText(endAtual.getBairro());
+            tCasa.setText(String.valueOf(endAtual.getNmrCasa()));
+            tCep.setText(endAtual.getCep());
+            tComplemento.setText(endAtual.getRua());
+        }
     }
 
     private void onClickSave() {
@@ -201,8 +274,6 @@ public class EnderecoFrame extends JFrame {
         tCasa.setText(null);
         tComplemento.setText(null);
         tBairro.setText(null);
-        tNome.setText(null);
     }
-    
 
 }
