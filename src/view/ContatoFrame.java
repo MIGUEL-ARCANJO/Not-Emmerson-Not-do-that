@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
+import javax.swing.border.LineBorder;
 
 public class ContatoFrame extends JFrame {
 
@@ -28,6 +29,7 @@ public class ContatoFrame extends JFrame {
     public ContatoFrame() {
         super("Contatos");
         Container tela = getContentPane();
+        tela.setBackground(new Color(214, 219, 223));
         setLayout(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         lbNome = new JLabel("Nome");
@@ -72,19 +74,41 @@ public class ContatoFrame extends JFrame {
         btnUltimo = new JButton(">|");
 
         btnSalvar.setBounds(280, 25, 80, 20);
+        btnSalvar.setBackground(new Color(244, 246, 246));
+        btnSalvar.setBorder(new LineBorder(Color.black));
+        
         btnAlterar.setBounds(280, 65, 80, 20);
+        btnAlterar.setBackground(new Color(244, 246, 246));
+        btnAlterar.setBorder(new LineBorder(Color.black));
+        
         btnExcluir.setBounds(280, 105, 80, 20);
+        btnExcluir.setBackground(new Color(244, 246, 246));
+        btnExcluir.setBorder(new LineBorder(Color.black));
 
         tela.add(btnSalvar);
         tela.add(btnAlterar);
         tela.add(btnExcluir);
 
         btnPrimeiro.setBounds(10, 135, 50, 20);
+        btnPrimeiro.setBackground(new Color(244, 246, 246));
+        btnPrimeiro.setBorder(new LineBorder(Color.black));
+        
         btnAnterior.setBounds(60, 135, 50, 20);
+        btnAnterior.setBackground(new Color(244, 246, 246));
+        btnAnterior.setBorder(new LineBorder(Color.black));
+        
         btnClear.setBounds(110, 135, 75, 20);
+        btnClear.setBackground(new Color(244, 246, 246));
+        btnClear.setBorder(new LineBorder(Color.black));
+        
         btnProximo.setBounds(185, 135, 50, 20);
+        btnProximo.setBackground(new Color(244, 246, 246));
+        btnProximo.setBorder(new LineBorder(Color.black));
+        
         btnUltimo.setBounds(235, 135, 50, 20);
-
+        btnUltimo.setBackground(new Color(244, 246, 246));
+        btnUltimo.setBorder(new LineBorder(Color.black));
+        
         tela.add(btnPrimeiro);
         tela.add(btnAnterior);
         tela.add(btnClear);
@@ -99,9 +123,13 @@ public class ContatoFrame extends JFrame {
 
         btnLocalizar = new JButton("Ir");
         btnLocalizar.setBounds(230, 180, 55, 20);
+        btnLocalizar.setBorder(new LineBorder(Color.black));
+        btnLocalizar.setBackground(new Color(244, 246, 246));
 
         leave = new JButton("Voltar");
         leave.setBounds(300, 180, 75, 20);
+        leave.setBackground(new Color(244, 246, 246));
+        leave.setBorder(new LineBorder(Color.black));
         leave.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

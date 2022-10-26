@@ -6,7 +6,6 @@
 package view;
 
 import controller.EnderecoController;
-import dao.EnderecoDao;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Font;
@@ -14,16 +13,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
-import model.Contato;
 import model.Endereco;
 
 /**
@@ -47,6 +42,7 @@ public class EnderecoFrame extends JFrame {
         setLayout(null);
 
         Container tela = getContentPane();
+        tela.setBackground(new Color(214, 219, 223));
 
         bairro = new JLabel("Bairro");
         bairro.setForeground(Color.BLACK);
@@ -89,6 +85,8 @@ public class EnderecoFrame extends JFrame {
 
         save = new JButton("Salvar");
         save.setBounds(290, 33, 75, 20);
+        save.setBackground(new Color(244, 246, 246));
+        save.setBorder(new LineBorder(Color.black));
         save.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -99,6 +97,8 @@ public class EnderecoFrame extends JFrame {
 
         delete = new JButton("Excluir");
         delete.setBounds(290, 83, 75, 20);
+        delete.setBackground(new Color(244, 246, 246));
+        delete.setBorder(new LineBorder(Color.black));
         delete.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -110,6 +110,8 @@ public class EnderecoFrame extends JFrame {
 
         update = new JButton("Alterar");
         update.setBounds(290, 133, 75, 20);
+        update.setBackground(new Color(244, 246, 246));
+        update.setBorder(new LineBorder(Color.black));
         update.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -120,6 +122,8 @@ public class EnderecoFrame extends JFrame {
 
         limpar = new JButton("Limpar");
         limpar.setBounds(105, 183, 75, 20);
+        limpar.setBackground(new Color(244, 246, 246));
+        limpar.setBorder(new LineBorder(Color.black));
         limpar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -130,7 +134,8 @@ public class EnderecoFrame extends JFrame {
 
         voltar = new JButton("Voltar");
         voltar.setBounds(290, 183, 75, 20);
-        voltar.setBackground(Color.GRAY.brighter());
+        voltar.setBackground(new Color(244, 246, 246));
+        voltar.setBorder(new LineBorder(Color.black));
         voltar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -142,6 +147,8 @@ public class EnderecoFrame extends JFrame {
 
         primeiro = new JButton("|<");
         primeiro.setBounds(5, 183, 50, 20);
+        primeiro.setBackground(new Color(244, 246, 246));
+        primeiro.setBorder(new LineBorder(Color.black));
         primeiro.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -152,6 +159,8 @@ public class EnderecoFrame extends JFrame {
 
         anterior = new JButton("<<");
         anterior.setBounds(55, 183, 50, 20);
+        anterior.setBackground(new Color(244, 246, 246));
+        anterior.setBorder(new LineBorder(Color.black));
         anterior.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -162,6 +171,8 @@ public class EnderecoFrame extends JFrame {
 
         proximo = new JButton(">>");
         proximo.setBounds(174, 183, 50, 20);
+        proximo.setBackground(new Color(244, 246, 246));
+        proximo.setBorder(new LineBorder(Color.black));
         proximo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -172,6 +183,8 @@ public class EnderecoFrame extends JFrame {
 
         ultimo = new JButton(">|");
         ultimo.setBounds(223, 183, 50, 20);
+        ultimo.setBackground(new Color(244, 246, 246));
+        ultimo.setBorder(new LineBorder(Color.black));
         ultimo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -207,11 +220,9 @@ public class EnderecoFrame extends JFrame {
 
     private void onClickLast() {
         try {
-            if(cont != 0){
             cont = enderecoList.size() - 1;
             getValores(cont);
-            }
-        }catch(IndexOutOfBoundsException ex){
+        } catch (IndexOutOfBoundsException ex) {
             JOptionPane.showMessageDialog(null, "Não possui nenhum endereço", "ENDEREÇO", JOptionPane.INFORMATION_MESSAGE);
         }
     }
