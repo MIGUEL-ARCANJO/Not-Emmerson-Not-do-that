@@ -6,7 +6,7 @@
 package view;
 
 import controller.CompromissoController;
-import controller.EnderecoController;
+import controller.ContatoController;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Font;
@@ -25,7 +25,6 @@ import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 import model.Compromisso;
 import model.Contato;
-import model.Endereco;
 import static view.ContatoFrame.contatoList;
 
 /**
@@ -37,9 +36,9 @@ public class CompromissoFrame extends JFrame {
     private JLabel observacao, contato, data, loc, hora;
     private JButton save, delete, update, irLoc, limpar, primeiro, anterior, proximo, ultimo, voltar;
     private JTextField tObservacao, tContato, tData, tHora;
-    private CompromissoController controller;
+    private CompromissoController compromissoController;
+    private ContatoController contatoController;
     private int cont = 0;
-    private int key;
 
     private List<Compromisso> compromissoList = new CompromissoController().listar();
 
@@ -235,29 +234,33 @@ public class CompromissoFrame extends JFrame {
     }
 
     private void getValores(int index) {
+        contatoController = new ContatoController();
+
         if (index <= compromissoList.size() - 1) {
-            //Endereco endAtual = (Endereco) compromissoList.get(index);
-//            tContato.setText(endAtual.getBairro());
-         //   tData.setText(String.valueOf(endAtual.getNmrCasa()));
-         //   tHora.setText(endAtual.getCep());
-           // tObservacao.setText(endAtual.getRua());
+            try {
+                Compromisso compromissoAtual = compromissoList.get(index);
+                tContato.setText(contatoController.buscarContatoPorId(compromissoAtual.getId()));
+                tData.setText(String.valueOf(compromissoAtual.getDataCompromisso()));
+                tHora.setText(String.valueOf(compromissoAtual.getHoraCompromisso()));
+                tObservacao.setText(compromissoAtual.getObservacao());
+            } catch (SQLException ex) {
+                System.err.println(ex);
+            }
+
         }
     }
 
     private void onClickSave() {
-        controller = new CompromissoController();
+        compromissoController = new CompromissoController();
+        contatoController = new ContatoController();
+        
+        System.out.println(tHora.getText());
         try {
-            Contato contato = new Contato();
+            Contato contato = contatoController.buscaContatoPorNome(tContato.getText());
 
-            for (Contato conts : contatoList) {
-                
-                contato.setId(conts.getId());
-                controller.salvar(tObservacao.getText(), tData.getText(), tHora.getText(), contato);
-                JOptionPane.showMessageDialog(null, "Salvo!!", "Endereço", JOptionPane.INFORMATION_MESSAGE);
-                onClickClear();
-                //compromissoList = new CompromissoController().listar();
-                
-            }
+            compromissoController.salvar(tObservacao.getText(), tData.getText(), tHora.getText(), contato);
+            JOptionPane.showMessageDialog(null, "Salvo!!", "Endereço", JOptionPane.INFORMATION_MESSAGE);
+            onClickClear();
 
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Não foi possível excluir\n" + ex, "Error!", JOptionPane.WARNING_MESSAGE);
@@ -267,32 +270,28 @@ public class CompromissoFrame extends JFrame {
     }
 
     private void onClickDelete() {
-        controller = new CompromissoController();
+        compromissoController = new CompromissoController();
 
-        //int id = ((Compromisso) compromissoList.get(cont)).getId();
-
-       // try {
-           // controller.deletar(id);
+        int id = ((Compromisso) compromissoList.get(cont)).getId();
+        try {
+            compromissoController.deletar(id);
             JOptionPane.showMessageDialog(null, "Salvo !");
             onClickClear();
-          //  compromissoList = new CompromissoController().listar();
-      //  } catch (SQLException ex) {
+
+        } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Erro!");
-        //}
+        }
     }
 
     private void onClickUpdate() {
-        controller = new CompromissoController();
+        compromissoController = new CompromissoController();
 
-        int id = 0;
-
-        //id = ((Compromisso) compromissoList.get(cont)).getId();
+        int id = ((Compromisso) compromissoList.get(cont)).getId();
 
         try {
-            controller.alterar(id, tHora.getText(), tObservacao.getText(), tData.getText());
+            compromissoController.alterar(id, tHora.getText(), tObservacao.getText(), tData.getText());
             JOptionPane.showMessageDialog(null, "Alteração salva com sucesso!");
             onClickClear();
-         //   compromissoList = new CompromissoController().listar();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Não foi possível realizar a alteração!\n" + ex);
 

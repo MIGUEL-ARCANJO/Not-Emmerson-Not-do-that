@@ -16,6 +16,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 import model.Contato;
 
@@ -25,8 +26,8 @@ import model.Contato;
  */
 public class AgendaPrincipal extends JFrame {
 
-    private JLabel contato, endereco;
-    private JButton btnCon, btnEnd;
+    private JLabel contato, endereco, compromisso;    
+    private JButton btnCon, btnEnd, btnComp;
     
     public AgendaPrincipal() {
         super("Agenda");
@@ -62,7 +63,20 @@ public class AgendaPrincipal extends JFrame {
         btnEnd.addActionListener(new EventoBotao());
         btnEnd.addMouseListener(new EventoBotao());
         tela.add(btnEnd);
-
+        
+        compromisso = new JLabel("Compromisso");
+        compromisso.setFont(new Font("Arial", 0, 18));
+        compromisso.setForeground(Color.black.darker());
+        compromisso.setBounds(110, 110, 200, 50);
+        tela.add(compromisso);
+        
+        btnComp = new JButton(new ImageIcon(getClass().getResource("/images/calendario.png")));
+        btnComp.setBounds(140, 160, 64, 64);
+        btnComp.setBorder(null);
+        btnComp.setBackground(tela.getBackground());
+        btnComp.addActionListener(new EventoBotao());
+        btnComp.addMouseListener(new EventoBotao());
+        tela.add(btnComp);
     }
 
     private class EventoBotao implements ActionListener, MouseListener {
@@ -75,6 +89,9 @@ public class AgendaPrincipal extends JFrame {
             } else if(e.getSource() == btnEnd) {
                 dispose();
                 new EnderecoFrame().setVisible(true);
+            } else if(e.getSource() == btnComp){
+                dispose();
+                new CompromissoFrame().setVisible(true);
             }
         }
 
@@ -96,6 +113,8 @@ public class AgendaPrincipal extends JFrame {
                 btnCon.setBorder(new LineBorder(Color.black));
             } else if(e.getSource() == btnEnd) {
                 btnEnd.setBorder(new LineBorder(Color.black));
+            } else if(e.getSource() == btnComp){
+                btnComp.setBorder(new LineBorder(Color.black));
             }
         }
 
@@ -105,13 +124,15 @@ public class AgendaPrincipal extends JFrame {
                 btnCon.setBorder(null);
             } else if(e.getSource() == btnEnd) {
                 btnEnd.setBorder(null);
+            }else if(e.getSource() == btnComp){
+                btnComp.setBorder(null);
             }
         }
 
     }
 
     private void configTela() {
-        setSize(350, 200);
+        setSize(350, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
         setLocationRelativeTo(null);

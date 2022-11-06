@@ -20,7 +20,7 @@ public class CompromissoDao extends GenericDao{
  
     public void insertCompromisso(Compromisso compromisso) throws SQLException{
         
-        String sql = "insert into compromisso(id, observacao, dataCompromisso, horaCompromisso, id_contatos, nome_contatos) values(DEFAULT, ?, ?, ?, ?, ?)";
+        String sql = "insert into compromisso(id, observacao, dataCompromisso, horaCompromisso, idContato) values(DEFAULT, ?, ?, ?, ?)";
         
         save(sql, compromisso.getObservacao(), compromisso.getDataCompromisso(), compromisso.getHoraCompromisso(), compromisso.getContato().getId());
         

@@ -6,7 +6,6 @@
 package controller;
 
 import dao.CompromissoDao;
-import dao.ContatoDao;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.text.DateFormat;
@@ -28,7 +27,7 @@ public class CompromissoController {
     }
 
     private Date formatarHora(String data) throws ParseException {
-        DateFormat formatter = new SimpleDateFormat("HH:mm:ss");
+        SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
         return new Date(formatter.parse(data).getTime());
     }
 
@@ -38,8 +37,10 @@ public class CompromissoController {
 
         compromisso.setObservacao(observacao);
         compromisso.setDataCompromisso(formatarData(dataCompromisso));
-        compromisso.setHoraCompromisso(formatarData(horaCompromisso));
+        compromisso.setHoraCompromisso(formatarHora(horaCompromisso));
         compromisso.setContato(contato);
+        
+        System.out.println(String.valueOf(formatarHora(horaCompromisso)));
 
         new CompromissoDao().insertCompromisso(compromisso);
 
