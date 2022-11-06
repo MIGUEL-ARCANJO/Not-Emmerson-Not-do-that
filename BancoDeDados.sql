@@ -20,7 +20,7 @@ create table compromisso(
 	id int primary key auto_increment,
     observacao varchar(500),
     dataCompromisso date not null,
-    horaCompromisso long not null,
+    horaCompromisso date not null,
     idContato int not null,
     foreign key (idContato) references contatos(id)
 );
