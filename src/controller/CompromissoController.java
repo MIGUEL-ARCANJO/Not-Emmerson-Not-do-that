@@ -26,21 +26,14 @@ public class CompromissoController {
         return new Date(formatter.parse(data).getTime());
     }
 
-    private Date formatarHora(String data) throws ParseException {
-        SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
-        return new Date(formatter.parse(data).getTime());
-    }
-
     public void salvar(String observacao, String dataCompromisso, String horaCompromisso, Contato contato) throws SQLException, ParseException {
 
         Compromisso compromisso = new Compromisso();
 
         compromisso.setObservacao(observacao);
         compromisso.setDataCompromisso(formatarData(dataCompromisso));
-        compromisso.setHoraCompromisso(formatarHora(horaCompromisso));
+        compromisso.setHoraCompromisso(horaCompromisso);
         compromisso.setContato(contato);
-        
-        System.out.println(String.valueOf(formatarHora(horaCompromisso)));
 
         new CompromissoDao().insertCompromisso(compromisso);
 
@@ -53,7 +46,7 @@ public class CompromissoController {
         compromisso.setId(id);
         compromisso.setObservacao(observacao);
         compromisso.setDataCompromisso(formatarData(dataCompromisso));
-        compromisso.setHoraCompromisso(formatarHora(horaCompromisso));
+        compromisso.setHoraCompromisso(horaCompromisso);
 
         new CompromissoDao().updateCompromisso(compromisso);
     }

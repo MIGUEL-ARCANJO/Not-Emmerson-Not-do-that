@@ -15,7 +15,7 @@ public class Compromisso {
     private int id;
     private String observacao;
     private Date dataCompromisso;
-    private Date horaCompromisso;
+    private String horaCompromisso;
     private Contato contato;
 
     public int getId() {
@@ -42,11 +42,11 @@ public class Compromisso {
         this.dataCompromisso = dataCompromisso;
     }
 
-    public Date getHoraCompromisso() {
+    public String getHoraCompromisso() {
         return horaCompromisso;
     }
 
-    public void setHoraCompromisso(Date horaCompromisso) {
+    public void setHoraCompromisso(String horaCompromisso) {
         this.horaCompromisso = horaCompromisso;
     }
 
@@ -61,7 +61,7 @@ public class Compromisso {
     public Compromisso() {
     }
 
-    public Compromisso(int id, String observacao, Date dataCompromisso, Date horaCompromisso, Contato contato) {
+    public Compromisso(int id, String observacao, Date dataCompromisso, String horaCompromisso, Contato contato) {
         this.id = id;
         this.observacao = observacao;
         this.dataCompromisso = dataCompromisso;
