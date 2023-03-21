@@ -1,0 +1,64 @@
+body{
+    padding: 0;
+    margin-left: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+
+.tabela{
+    width: 100vw;
+    height: 20px;
+    text-align: center;
+    align-items: center;
+    border-collapse: collapse;
+}
+
+.tabela tr{
+
+}
+
+.tabela th{
+    height: 50px;
+    background-color: #62a56bd7;
+    text-align: center;
+    justify-content: center;
+}
+
+.tabela td {
+    background-color: #81a38b;
+    vertical-align: bottom;
+    height: 30px;
+}
+
+.tabela th, td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    overflow-x: auto;
+}
+
+.tabela caption{
+    margin-top: 1vh;
+    font-size: 2rem;
+    background-color: #29723f;
+}
+
+.tabelaimg {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tabelaimg caption{
+    margin-top: 3vh;
+    font-size: 2rem;
+}
+
+.tabelaimg td{
+    border: none;
+    font-size: 0;
+    padding: 0;
+}
