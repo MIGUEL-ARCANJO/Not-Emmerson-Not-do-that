@@ -1,0 +1,94 @@
+[
+    {
+        "merged": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-merged_res-10:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-main-12:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-merged_res-10:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-main-12:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-merged_res-10:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-main-12:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-merged_res-10:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-main-12:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-merged_res-10:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-main-12:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-merged_res-10:\\font_akaya_telivigala.xml.flat",
+        "source": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-main-12:\\font\\akaya_telivigala.xml"
+    },
+    {
+        "merged": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-merged_res-10:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-main-12:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-merged_res-10:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-main-12:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-merged_res-10:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-main-12:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-merged_res-10:\\layout_activity_cadastro_funcionario.xml.flat",
+        "source": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-main-12:\\layout\\activity_cadastro_funcionario.xml"
+    },
+    {
+        "merged": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-merged_res-10:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-main-12:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-merged_res-10:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-main-12:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.teste_alalal.app-merged_res-10:/layout_activity_main2.xml.flat",
+        "source": "com.example.teste_alalal.app-main-12:/layout/activity_main2.xml"
+    },
+    {
+        "merged": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-merged_res-10:\\layout_activity_main2.xml.flat",
+        "source": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-main-12:\\layout\\activity_main2.xml"
+    },
+    {
+        "merged": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-merged_res-10:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-main-12:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-merged_res-10:\\font_abril_fatface.xml.flat",
+        "source": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-main-12:\\font\\abril_fatface.xml"
+    },
+    {
+        "merged": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-merged_res-10:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-main-12:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-merged_res-10:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-main-12:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-merged_res-10:\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-pngs-5:\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-merged_res-10:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-main-12:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-merged_res-10:\\layout_activity_listamento_funcionarios.xml.flat",
+        "source": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-main-12:\\layout\\activity_listamento_funcionarios.xml"
+    },
+    {
+        "merged": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-merged_res-10:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-main-12:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-merged_res-10:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\migue\\.gradle\\daemon\\7.3.3\\com.example.teste_alalal.app-main-12:\\mipmap-mdpi\\ic_launcher.webp"
+    }
+]
