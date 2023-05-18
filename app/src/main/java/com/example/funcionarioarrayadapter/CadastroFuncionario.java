@@ -2,7 +2,6 @@ package com.example.funcionarioarrayadapter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -11,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.example.funcionarioarrayadapter.controller.FuncionarioController;
 import com.example.funcionarioarrayadapter.model.Funcionario;
 
 import java.util.ArrayList;
@@ -26,19 +26,21 @@ public class CadastroFuncionario extends AppCompatActivity {
     private String nomeVal, cargoVal;
     private char sexoVal;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_funcionario);
         getSupportActionBar().hide();
-
         initComponents();
     }
+
 
     @Override
     protected void onStart() {
         super.onStart();
 
+        FuncionarioController controller = FuncionarioController.getController();
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -59,12 +61,14 @@ public class CadastroFuncionario extends AppCompatActivity {
             cargoVal = cargo.getText().toString().trim();
 
             if(verificarCampos(nomeVal, cargoVal)){
-                getArrayFuncionario().add(new Funcionario(new Random().nextInt(), nomeVal, sexoVal, cargoVal));
+
+                controller.createFuncionario(new Funcionario(    new Random().nextInt(), nomeVal, sexoVal, cargoVal));
+
                 for (Funcionario funcs :
                         getArrayFuncionario()) {
                     System.out.println(funcs.toString());
                 }
-                startActivity(new Intent(this, MainActivity.class));
+                finish();
             }
         });
 

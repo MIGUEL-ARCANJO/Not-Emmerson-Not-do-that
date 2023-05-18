@@ -8,8 +8,14 @@ public class Funcionario {
     private char sexo;
     private String cargo;
 
-    public Funcionario(){
+    public Funcionario() {
 
+    }
+
+    public Funcionario( String nome, String cargo,char sexo) {
+        this.nome = nome;
+        this.cargo = cargo;
+        this.sexo = sexo;
     }
 
     public Funcionario(int codigo, String nome, char sexo, String cargo) {

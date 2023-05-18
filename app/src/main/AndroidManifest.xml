@@ -12,6 +12,9 @@
         android:theme="@style/Theme.FuncionarioArrayAdapter"
         tools:targetApi="31">
         <activity
+            android:name=".AtualizarFuncionario"
+            android:exported="false" />
+        <activity
             android:name=".CadastroFuncionario"
             android:exported="false" />
         <activity
