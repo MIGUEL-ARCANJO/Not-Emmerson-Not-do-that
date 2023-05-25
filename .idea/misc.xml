@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/SALVE_AQUI_SEUS_ARQUIVOS/Not-Emmerson-Not-do-that/app/src/main/res/drawable/background.xml" value="0.2985" />
+        <entry key="..\:/SALVE_AQUI_SEUS_ARQUIVOS/Not-Emmerson-Not-do-that/app/src/main/res/drawable/background_buton.xml" value="0.2985" />
+        <entry key="..\:/SALVE_AQUI_SEUS_ARQUIVOS/Not-Emmerson-Not-do-that/app/src/main/res/drawable/btn_shape.xml" value="0.2985" />
+        <entry key="..\:/SALVE_AQUI_SEUS_ARQUIVOS/Not-Emmerson-Not-do-that/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2985" />
+        <entry key="..\:/SALVE_AQUI_SEUS_ARQUIVOS/Not-Emmerson-Not-do-that/app/src/main/res/drawable/stroke_txt.xml" value="0.2985" />
+        <entry key="..\:/SALVE_AQUI_SEUS_ARQUIVOS/Not-Emmerson-Not-do-that/app/src/main/res/layout/activity_atualizar_funcionario.xml" value="0.18802083333333333" />
+        <entry key="..\:/SALVE_AQUI_SEUS_ARQUIVOS/Not-Emmerson-Not-do-that/app/src/main/res/layout/activity_cadastro_funcionario.xml" value="0.358695652173913" />
+        <entry key="..\:/SALVE_AQUI_SEUS_ARQUIVOS/Not-Emmerson-Not-do-that/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17_PREVIEW" project-jdk-name="Android API 32 Platform" project-jdk-type="Android SDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

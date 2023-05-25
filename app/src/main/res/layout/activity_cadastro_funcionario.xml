@@ -21,7 +21,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:hint="Nome: "
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:padding="15dp"
+            android:background="@drawable/stroke_txt"
+            />
 
         <EditText
             android:id="@+id/cargo"
@@ -29,7 +34,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="35dp"
             android:hint="Cargo: "
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:padding="15dp"
+            android:background="@drawable/stroke_txt"
+
+            />
 
         <Spinner
             android:id="@+id/spinner"
@@ -37,16 +48,25 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="35dp"
             android:scrollbarSize="17dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:padding="15dp"
+
             />
 
         <Button
             android:id="@+id/cadastrar"
-            android:layout_width="wrap_content"
+            android:layout_width="115dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="35dp"
             android:text="Cadastar"
             android:textAllCaps="false"
             android:textSize="17dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:background="@drawable/btn_shape"
             />
     </LinearLayout>
 

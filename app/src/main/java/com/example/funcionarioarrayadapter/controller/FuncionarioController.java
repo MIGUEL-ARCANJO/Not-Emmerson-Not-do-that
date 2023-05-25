@@ -49,6 +49,4 @@ public class FuncionarioController {
     public Funcionario listFuncionarioByIndex(int index){
         return funcionarios.get(index);
     }
-
-
 }

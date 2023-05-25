@@ -8,7 +8,7 @@
 
     <Button
         android:id="@+id/cadastro"
-        android:layout_width="wrap_content"
+        android:layout_width="115dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginTop="35dp"
@@ -17,11 +17,13 @@
         app:layout_constraintTop_toTopOf="parent"
         android:textAllCaps="false"
         android:textSize="17dp"
+        android:background="@drawable/btn_shape"
+
         />
 
     <Button
         android:id="@+id/update"
-        android:layout_width="wrap_content"
+        android:layout_width="115dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
         android:layout_marginEnd="50dp"
@@ -30,6 +32,8 @@
         app:layout_constraintTop_toTopOf="parent"
         android:textAllCaps="false"
         android:textSize="17dp"
+        android:background="@drawable/btn_shape"
+
         />
 
     <ListView
