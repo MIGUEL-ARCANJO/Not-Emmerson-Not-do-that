@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">FuncionarioArrayAdapter</string>
-    <string-array name="sexoArray">
-        <item>Masculino</item>
-        <item>Feminino</item>
-    </string-array>
-</resources>
